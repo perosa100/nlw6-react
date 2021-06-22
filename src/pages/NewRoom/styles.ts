@@ -30,6 +30,10 @@ export const HeaderLogo = styled.aside`
     color: ${({ theme }) => theme.colors.white};
   }
 `
+export const Heading = styled.h2`
+  font-size: 24px;
+  margin: 64px 0 24px;
+`
 
 export const Content = styled.main`
   flex: 8;
@@ -116,5 +120,15 @@ export const ClassRoomContent = styled.div`
     height: 1px;
     background: ${({ theme }) => theme.colors.border};
     margin-left: 16px;
+  }
+`
+
+export const GoRoom = styled.p`
+  font-size: 14px;
+  color: ${({ theme }) => theme.colors.paragraph};
+  margin-top: 16px;
+
+  a {
+    color: ${({ theme }) => theme.colors.pink};
   }
 `

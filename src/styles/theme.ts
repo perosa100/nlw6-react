@@ -23,16 +23,15 @@ export const theme = {
     }
   },
   colors: {
-    primary: '#F231A5',
-    secondary: '#3CD3C1',
-    mainBg: '#06092B',
-    lightBg: '#F2F2F2',
+    background: '#f8f8f8',
+    border: '#a8a8b3',
+    paragraph: '#737380',
+    color: '#29292e',
+    purple: '#835afd',
     white: '#FAFAFA',
-    black: '#030517',
-    lightGray: '#EAEAEA',
-    gray: '#8F8F8F',
-    darkGray: '#2E2F42',
-    red: '#FF6347'
+    red: '#ea4335',
+    pink: '#e559f9',
+    black: '#030517'
   },
   spacings: {
     xxsmall: '0.8rem',

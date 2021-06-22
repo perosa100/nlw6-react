@@ -20,11 +20,13 @@ const GlobalStyles = createGlobalStyle`
     }
 
     body {
-      font-family: ${({ theme }) => theme.font.family};
-      font-size: ${({ theme }) => theme.font.sizes.medium};
-      background-color: ${({ theme }) => theme.colors.mainBg};
+      color: ${({ theme }) => theme.colors.color};
+      background-color: ${({ theme }) => theme.colors.background};
     }
 
+    body,input,button,textarea{
+      font:400 16px ${({ theme }) => theme.font.family};
+    }
 `
 
 export default GlobalStyles

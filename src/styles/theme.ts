@@ -24,6 +24,7 @@ export const theme = {
   },
   colors: {
     background: '#f8f8f8',
+    gray200: '#fefefe',
     border: '#a8a8b3',
     paragraph: '#737380',
     color: '#29292e',
@@ -31,7 +32,9 @@ export const theme = {
     white: '#FAFAFA',
     red: '#ea4335',
     pink: '#e559f9',
-    black: '#030517'
+    black: '#030517',
+    gray100: '#e2e2e2',
+    gray300: '#737388'
   },
   spacings: {
     xxsmall: '0.8rem',

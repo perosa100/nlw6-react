@@ -2,11 +2,34 @@ import * as S from './styles'
 import IllustrationImg from '../../assets/images/illustration.svg'
 import LogoImg from '../../assets/images/logo.svg'
 import { Button } from '../../components/Button/index'
-import { Link } from 'react-router-dom'
+import { Link, useHistory } from 'react-router-dom'
 import { useAuthGoogle } from 'context/AuthContext'
+import { FormEvent, useState } from 'react'
+import { database } from 'services/firebase'
 
 export function NewRoom() {
+  const history = useHistory()
+
   const { user } = useAuthGoogle()
+
+  const [newRoom, setNewRoom] = useState('')
+
+  async function handleCreateRoom(e: FormEvent) {
+    e.preventDefault()
+
+    if (newRoom.trim() === '') {
+      return
+    }
+
+    const roomRef = database.ref('rooms')
+
+    const firebaseRoom = await roomRef.push({
+      title: newRoom,
+      authorid: user.id
+    })
+
+    history.push(`rooms/${firebaseRoom.key}`)
+  }
 
   return (
     <S.Wrapper>
@@ -21,8 +44,13 @@ export function NewRoom() {
 
           <S.Heading> Criar uma Nova Sala</S.Heading>
 
-          <S.FormContent action="">
-            <input type="text" placeholder="Nome da Sala" />
+          <S.FormContent onSubmit={handleCreateRoom}>
+            <input
+              type="text"
+              placeholder="Nome da Sala"
+              onChange={(event) => setNewRoom(event.target.value)}
+              value={newRoom}
+            />
 
             <Button type="submit">Criar a Sala</Button>
           </S.FormContent>

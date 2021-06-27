@@ -11,8 +11,12 @@ export const Container = styled.div`
   }
 
   &.isAnswered {
+    background: ${({ theme }) => theme.colors.gray700};
   }
+
   &.isHighlighted {
+    background: ${({ theme }) => theme.colors.gray400};
+    border: 1px solid ${({ theme }) => theme.colors.purple};
   }
 `
 

@@ -22,7 +22,7 @@ export const Question: React.FC<QuestionProps> = ({
   return (
     <S.Container
       className={`${isAnswered ? 'isAnswered' : ''} ${
-        isHighlighted ? 'isHighlighted' : ''
+        isHighlighted && !isAnswered ? 'isHighlighted' : ''
       }`}
     >
       <S.Title>{content}</S.Title>

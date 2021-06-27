@@ -29,6 +29,8 @@ export const theme = {
     paragraph: '#737380',
     color: '#29292e',
     purple: '#835afd',
+    gray400: '#f4f0ff',
+    gray700: '#dbdcdd',
     white: '#FAFAFA',
     red: '#ea4335',
     pink: '#e559f9',

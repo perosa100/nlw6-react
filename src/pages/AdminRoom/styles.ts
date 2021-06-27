@@ -16,6 +16,15 @@ export const Content = styled.div`
   > img {
     max-height: 45px;
   }
+
+  > div {
+    display: flex;
+    gap: 16px;
+
+    button {
+      height: 40px;
+    }
+  }
 `
 export const Main = styled.main`
   max-width: 800px;
@@ -40,40 +49,6 @@ export const ContentTitle = styled.div`
     font-weight: 500;
   }
 `
-export const FormContent = styled.form`
-  textarea {
-    width: 100%;
-    border: 0;
-    padding: 16px;
-    border-radius: 8px;
-    background: ${({ theme }) => theme.colors.gray200};
-    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
-    resize: vertical;
-    min-height: 130px;
-  }
-`
-export const FormContentFooter = styled.div`
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-top: 16px;
-
-  > span {
-    font-size: 14px;
-    color: ${({ theme }) => theme.colors.gray300};
-    font-weight: 500;
-
-    button {
-      background: transparent;
-      border: 0;
-      color: ${({ theme }) => theme.colors.purple};
-      text-decoration: underline;
-      font-size: 14px;
-      font-weight: 500;
-      cursor: pointer;
-    }
-  }
-`
 
 export const User = styled.div`
   display: flex;
@@ -95,5 +70,3 @@ export const User = styled.div`
 export const QuestionList = styled.div`
   margin-top: 32px;
 `
-
-export const LikeButton = styled.button``

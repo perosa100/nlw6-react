@@ -4,9 +4,9 @@ import LogoImg from '../../assets/images/logo.svg'
 import GooggleIconImg from '../../assets/images/google-icon.svg'
 import { Button } from './../../components/Button/index'
 import { useHistory } from 'react-router-dom'
-import { useAuthGoogle } from 'context/AuthContext'
 import { FormEvent, useState } from 'react'
 import { database } from 'services/firebase'
+import { useAuthGoogle } from 'hooks/useAuth'
 
 export function Home() {
   const history = useHistory()
@@ -33,6 +33,10 @@ export function Home() {
     if (!roomRef.exists()) {
       alert('Sala Não existe')
       return
+    }
+
+    if (roomRef.val().endedAt) {
+      alert('Sala foi fechada')
     }
 
     history.push(`/rooms/${roomCode}`)

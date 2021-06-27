@@ -1,5 +1,5 @@
 import { auth, firebase } from 'services/firebase'
-import { createContext, useState, useContext, useEffect } from 'react'
+import { createContext, useState, useEffect } from 'react'
 
 type User = {
   id: string
@@ -8,14 +8,14 @@ type User = {
 }
 
 type CreateContextProps = {
-  user: User
+  user: User | undefined
   signInWithGoogle: () => Promise<void>
 }
 
-const RoomContext = createContext({} as CreateContextProps)
+export const RoomContext = createContext({} as CreateContextProps)
 
 const AuthContext = ({ children }: any) => {
-  const [user, setUser] = useState<User>({} as User)
+  const [user, setUser] = useState<User>()
 
   useEffect(() => {
     const unsubribe = auth.onAuthStateChanged((user) => {
@@ -64,7 +64,5 @@ const AuthContext = ({ children }: any) => {
     </RoomContext.Provider>
   )
 }
-
-export const useAuthGoogle = () => useContext(RoomContext)
 
 export { AuthContext }
